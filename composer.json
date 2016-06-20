@@ -1,0 +1,19 @@
+{
+  "name": "bbn/appui-notifications",
+  "description": "Notifications management interface for APPUI",
+  "keywords": ["notifications","real time","message","appui"],
+  "homepage": "https://github.com/nabab/appui-notifications",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thomas Nabet",
+      "email": "thomas.nabet@gmail.com",
+      "homepage": "http://bbn.solutions",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.7.0",
+    "bbn/bbn": "dev-master"
+  }
+}
