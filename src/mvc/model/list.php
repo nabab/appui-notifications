@@ -4,8 +4,8 @@
  *
  **/
 
-/** @var $this \bbn\mvc\model*/
-$notif = new \bbn\appui\notification($this->db);
+/** @var $model \bbn\mvc\model*/
+$notif = new \bbn\appui\notification($model->db);
 return [
   'notifications' => $notif->get_list(),
   'lng' => [

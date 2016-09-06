@@ -4,6 +4,6 @@
  *
  **/
 
-/** @var $this \bbn\mvc\controller */
+/** @var $ctrl \bbn\mvc\controller */
 //sleep(60);
-$this->combo(_("My notifications"), true);
+$ctrl->combo(_("My notifications"), true);
