@@ -32,7 +32,7 @@ $("div.appui-notifications-grid", ele).kendoGrid({
     field: "creation",
     width: 100,
     template: function(e){
-      return appui.fn.fdate(e.creation);
+      return bbn.fn.fdate(e.creation);
     }
   }, {
     title: " ",
