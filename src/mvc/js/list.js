@@ -1,5 +1,5 @@
 // Javascript Document
-$("div.appui-notifications-grid", ele).kendoGrid({
+$("div.bbn-notifications-grid", ele).kendoGrid({
   dataSource: {
     data: data.notifications,
     schema: {
