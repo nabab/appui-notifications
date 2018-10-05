@@ -38,7 +38,7 @@ $("div.bbn-notifications-grid", ele).kendoGrid({
     title: " ",
     width: 50,
     template: function(e){
-      return '<button class="k-button"><i class="adherent fa fa-check"> </i></button>'
+      return '<button class="k-button"><i class="adherent fas fa-check"> </i></button>'
     }
   }]
 });
