@@ -7,10 +7,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2018-10-26 17:42+0200\n"
-"POT-Revision-Date: 2018-10-26 17:42+0200\n"
+"POT-Creation-Date: 2018-12-10 17:54+0100\n"
+"POT-Revision-Date: 2018-12-10 17:54+0100\n"
 "Language: en\n"
-"X-Domain: appui-notifications3\n"
+"X-Domain: appui-notifications6\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: /home/app2/_appui/vendor/bbn/appui-notifications/src/mvc/model/list.php
@@ -23,7 +23,7 @@ msgstr "Message"
 
 #: /home/app2/_appui/vendor/bbn/appui-notifications/src/mvc/model/list.php
 msgid "Creation"
-msgstr "Création"
+msgstr "Creation"
 
 #: /home/app2/_appui/vendor/bbn/appui-notifications/src/mvc/model/list.php
 msgid "Mark as read"
