@@ -1,0 +1,38 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1\n"
+"Report-Msgid-Bugs-To: info@bbn.so\n"
+"last-Translator: BBN Solutions <support@bbn.solutions>\n"
+"Language-Team: FR <FR@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2018-12-26 12:26+0100\n"
+"POT-Revision-Date: 2018-12-26 12:26+0100\n"
+"Language: fr\n"
+"X-Domain: appui-notifications2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-notifications/src/mvc/model/list.php
+msgid "Title"
+msgstr "Titre"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-notifications/src/mvc/model/list.php
+msgid "Message"
+msgstr "Message"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-notifications/src/mvc/model/list.php
+msgid "Creation"
+msgstr "Création"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-notifications/src/mvc/model/list.php
+msgid "Mark as read"
+msgstr "Marquer comme lu"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-notifications/src/mvc/public/alert.php
+msgid "My alerts"
+msgstr "Mes alertes"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-notifications/src/mvc/public/list.php
+msgid "My notifications"
+msgstr "Mes notifications"
