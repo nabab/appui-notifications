@@ -1,0 +1,13 @@
+{
+  "text": "Notifications",
+  "num": 6,
+  "icon": "nf nf-fa-sticky_note_o",
+  "items": [
+    {
+      "text": "Notifications' list",
+      "num": 1,
+      "icon": "nf nf-fa-list",
+      "link": "list"
+    }
+  ]
+}
