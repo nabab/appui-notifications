@@ -1,0 +1,315 @@
+{
+  "bbn_notifications" : {
+    "keys": {
+      "PRIMARY": {
+        "columns": [
+          "id"
+        ],
+        "ref_db": null,
+        "ref_table": null,
+        "ref_column": null,
+        "constraint": null,
+        "update": null,
+        "delete": null,
+        "unique": 1
+      },
+      "id_content_2": {
+        "columns": [
+          "id_content",
+          "id_user"
+        ],
+        "ref_db": null,
+        "ref_table": null,
+        "ref_column": null,
+        "constraint": "bbn_notifications_ibfk_1",
+        "update": "CASCADE",
+        "delete": "CASCADE",
+        "unique": 1
+      },
+      "id_content": {
+        "columns": [
+          "id_content"
+        ],
+        "ref_db": null,
+        "ref_table": "bbn_notifications_content",
+        "ref_column": "id",
+        "constraint": "bbn_notifications_ibfk_1",
+        "update": "CASCADE",
+        "delete": "CASCADE",
+        "unique": 0
+      },
+      "id_user": {
+        "columns": [
+          "id_user"
+        ],
+        "ref_db": null,
+        "ref_table": "bbn_users",
+        "ref_column": "id",
+        "constraint": "bbn_notifications_ibfk_2",
+        "update": "CASCADE",
+        "delete": "CASCADE",
+        "unique": 0
+      }
+    },
+    "cols": {
+      "id": [
+        "PRIMARY"
+      ],
+      "id_content": [
+        "id_content_2",
+        "id_content"
+      ],
+      "id_user": [
+        "id_content_2",
+        "id_user"
+      ]
+    },
+    "fields": {
+      "id": {
+        "position": 1,
+        "type": "binary",
+        "null": 0,
+        "key": "PRI",
+        "extra": "",
+        "signed": true,
+        "virtual": false,
+        "generation": "",
+        "maxlength": 16
+      },
+      "id_content": {
+        "position": 2,
+        "type": "binary",
+        "null": 0,
+        "key": "MUL",
+        "extra": "",
+        "signed": true,
+        "virtual": false,
+        "generation": "",
+        "maxlength": 16
+      },
+      "id_user": {
+        "position": 3,
+        "type": "binary",
+        "null": 0,
+        "key": "MUL",
+        "extra": "",
+        "signed": true,
+        "virtual": false,
+        "generation": "",
+        "maxlength": 16
+      },
+      "web": {
+        "position": 4,
+        "type": "decimal",
+        "null": 1,
+        "key": null,
+        "extra": "",
+        "signed": false,
+        "virtual": false,
+        "generation": "",
+        "default": "NULL",
+        "maxlength": 14,
+        "decimals": 4
+      },
+      "browser": {
+        "position": 5,
+        "type": "decimal",
+        "null": 1,
+        "key": null,
+        "extra": "",
+        "signed": false,
+        "virtual": false,
+        "generation": "",
+        "default": "NULL",
+        "maxlength": 14,
+        "decimals": 4
+      },
+      "mail": {
+        "position": 6,
+        "type": "decimal",
+        "null": 1,
+        "key": null,
+        "extra": "",
+        "signed": false,
+        "virtual": false,
+        "generation": "",
+        "default": "NULL",
+        "maxlength": 14,
+        "decimals": 4
+      },
+      "app": {
+        "position": 7,
+        "type": "decimal",
+        "null": 1,
+        "key": null,
+        "extra": "",
+        "signed": false,
+        "virtual": false,
+        "generation": "",
+        "default": "NULL",
+        "maxlength": 14,
+        "decimals": 4
+      },
+      "read": {
+        "position": 8,
+        "type": "decimal",
+        "null": 1,
+        "key": null,
+        "extra": "",
+        "signed": false,
+        "virtual": false,
+        "generation": "",
+        "default": "NULL",
+        "maxlength": 14,
+        "decimals": 4
+      },
+      "dt_web": {
+        "position": 9,
+        "type": "datetime",
+        "null": 1,
+        "key": null,
+        "extra": "VIRTUAL GENERATED",
+        "signed": true,
+        "virtual": true,
+        "generation": "from_unixtime(`web`)",
+        "default": "NULL"
+      },
+      "dt_browser": {
+        "position": 10,
+        "type": "datetime",
+        "null": 1,
+        "key": null,
+        "extra": "VIRTUAL GENERATED",
+        "signed": true,
+        "virtual": true,
+        "generation": "from_unixtime(`browser`)",
+        "default": "NULL"
+      },
+      "dt_mail": {
+        "position": 11,
+        "type": "datetime",
+        "null": 1,
+        "key": null,
+        "extra": "VIRTUAL GENERATED",
+        "signed": true,
+        "virtual": true,
+        "generation": "from_unixtime(`mail`)",
+        "default": "NULL"
+      },
+      "dt_app": {
+        "position": 12,
+        "type": "datetime",
+        "null": 1,
+        "key": null,
+        "extra": "VIRTUAL GENERATED",
+        "signed": true,
+        "virtual": true,
+        "generation": "from_unixtime(`app`)",
+        "default": "NULL"
+      },
+      "dt_read": {
+        "position": 13,
+        "type": "datetime",
+        "null": 1,
+        "key": null,
+        "extra": "VIRTUAL GENERATED",
+        "signed": true,
+        "virtual": true,
+        "generation": "from_unixtime(`read`)",
+        "default": "NULL"
+      }
+    }
+  },
+  "bbn_notifications_content": {
+    "keys": {
+      "PRIMARY": {
+        "columns": [
+          "id"
+        ],
+        "ref_db": null,
+        "ref_table": null,
+        "ref_column": null,
+        "constraint": null,
+        "update": null,
+        "delete": null,
+        "unique": 1
+      },
+      "id_option": {
+        "columns": [
+          "id_option"
+        ],
+        "ref_db": null,
+        "ref_table": "bbn_options",
+        "ref_column": "id",
+        "constraint": "bbn_notifications_content_ibfk_1",
+        "update": "CASCADE",
+        "delete": "CASCADE",
+        "unique": 0
+      }
+    },
+    "cols": {
+      "id": [
+        "PRIMARY"
+      ],
+      "id_option": [
+        "id_option"
+      ]
+    },
+    "fields": {
+      "id": {
+        "position": 1,
+        "type": "binary",
+        "null": 0,
+        "key": "PRI",
+        "extra": "",
+        "signed": true,
+        "virtual": false,
+        "generation": "",
+        "maxlength": 16
+      },
+      "id_option": {
+        "position": 2,
+        "type": "binary",
+        "null": 1,
+        "key": "MUL",
+        "extra": "",
+        "signed": true,
+        "virtual": false,
+        "generation": "",
+        "default": "NULL",
+        "maxlength": 16
+      },
+      "title": {
+        "position": 3,
+        "type": "varchar",
+        "null": 0,
+        "key": null,
+        "extra": "",
+        "signed": true,
+        "virtual": false,
+        "generation": "",
+        "maxlength": 255
+      },
+      "content": {
+        "position": 4,
+        "type": "mediumtext",
+        "null": 0,
+        "key": null,
+        "extra": "",
+        "signed": true,
+        "virtual": false,
+        "generation": ""
+      },
+      "creation": {
+        "position": 5,
+        "type": "datetime",
+        "null": 0,
+        "key": null,
+        "extra": "",
+        "signed": true,
+        "virtual": false,
+        "generation": ""
+      }
+    }
+  }
+}
