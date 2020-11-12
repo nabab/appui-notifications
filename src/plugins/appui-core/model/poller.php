@@ -2,11 +2,11 @@
 $id_user = $model->inc->user->get_id();
 $path_web = \bbn\mvc::get_user_data_path($id_user, 'appui-notifications') . 'web/' . $model->inc->user->get_osession('id_session');
 $path_browser = \bbn\mvc::get_user_data_path($id_user, 'appui-notifications') . 'browser/' . $model->inc->user->get_osession('id_session');
-//return [];
+$notifications = new \bbn\appui\notifications($model->db);
 return [[
   'id' => 'appui-notifications-0',
   'frequency' => 1,
-  'function' => function(array $data) use($path_web, $path_browser){
+  'function' => function(array $data) use($path_web, $path_browser, $notifications, $id_user){
     $res = [
       'success' => true,
       'data' => []
@@ -45,6 +45,11 @@ return [[
             }
           }
         }
+      }
+      $unread = $notifications->cont_unread($id_user);
+      if ($unread !== $data['data']['unread']) {
+        $res['data']['unread'] = $unread;
+        $res['data']['serviceWorkers'] = ['unread' => $unread];
       }
     }
     return $res;

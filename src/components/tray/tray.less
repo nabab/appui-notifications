@@ -1,0 +1,24 @@
+.appui-notifications-tray {
+  .appui-notifications-tray-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .appui-notifications-tray-main {
+    position: absolute;
+    right: 0;
+    z-index: 5;
+    height: 450px;
+    width: 300px;
+    .appui-notifications-tray-item {
+      .bbn-grid-fields {
+        grid-row-gap: inherit;
+        grid-column-gap: 0.7em;
+        align-items: center;
+      }
+      &.bbn-alt {
+        border: inherit;
+      }
+    }
+  }
+}
