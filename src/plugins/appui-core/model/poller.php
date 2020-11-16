@@ -6,7 +6,7 @@ $notifications = new \bbn\appui\notifications($model->db);
 return [[
   'id' => 'appui-notifications-0',
   'frequency' => 1,
-  'function' => function(array $data) use($path_web, $path_browser, $notifications, $id_user){
+  'function' => function(array $data) use($path_web, $path_browser, $notifications, $id_user, $model){
     $res = [
       'success' => true,
       'data' => []
@@ -46,10 +46,21 @@ return [[
           }
         }
       }
-      $unread = $notifications->cont_unread($id_user);
-      if ($unread !== $data['data']['unread']) {
-        $res['data']['unread'] = $unread;
-        $res['data']['serviceWorkers'] = ['unread' => $unread];
+      $unread = $model->get_model($model->plugin_url('appui-notifications').'/data/list', [
+        'filters' => [
+          'conditions' => [[
+            'field' => "read",
+            'operator' => "isnull"
+          ]]
+        ],
+        'limit' => 0,
+        'start' => 0
+      ]);
+      $hash = md5(json_encode($unread['data']));
+      if ($hash !== $data['data']['unreadHash']) {
+        $res['data']['unreadHash'] = $hash;
+        $res['data']['unread'] = $unread['data'];
+        $res['data']['serviceWorkers'] = ['unreadHash' => $hash];
       }
     }
     return $res;

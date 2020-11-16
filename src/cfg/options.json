@@ -1,0 +1,36 @@
+[{
+  "id_parent": "appui",
+  "code": "notifications",
+  "text": "Notifications",
+  "value": {
+    "icon": "nf nf-fa-exclamation"
+  },
+  "cfg": {
+    "show_code": 1,
+    "show_alias": 0,
+    "show_value": 1,
+    "show_icon": 1,
+    "sortable": 0,
+    "allow_children": 1,
+    "desc":"",
+    "inheritance": "cascade",
+    "controller": null,
+    "schema": null,
+    "form": null,
+    "default_value": null,
+    "permissions": 1
+  },
+  "items": [{
+    "code": "cfg",
+    "text": "Configuration",
+    "value": {
+      "web":true,
+      "browser": true,
+      "mail": "default",
+      "mobile": false
+    }
+  }, {
+    "code": "list",
+    "text": "Notifications"
+  }]
+}]

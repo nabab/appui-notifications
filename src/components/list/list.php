@@ -43,13 +43,19 @@
     <div v-if="hasSelected"
          class="appui-notifications-list-notification bbn-flex-height"
     >
-      <div class="bbn-header bbn-spadded bbn-b bbn-c bbn-no-border-left bbn-ellipsis"
-           v-html="selected.title"
-      ></div>
+      <div class="bbn-header bbn-spadded bbn-b bbn-c bbn-no-border-left bbn-ellipsis"><?=_('NOTIFICATION')?></div>
       <div class="bbn-flex-fill bbn-alt-background">
         <bbn-scroll>
           <div class="bbn-padded">
-          <div class="bbn-box bbn-bottom-space">
+            <div class="bbn-box bbn-bottom-space">
+              <div class="bbn-radius-top bbn-spadded bbn-c bbn-b bbn-bordered-bottom"
+                  v-html="selected.title"
+              ></div>
+              <div class="bbn-lpadded"
+                    v-html="selected.content"
+              ></div>
+            </div>
+          <div class="bbn-box">
               <div class="bbn-radius-top bbn-spadded bbn-c bbn-b bbn-bordered-bottom"><?=_('NOTIFIED')?></div>
               <div class="bbn-spadded">
                 <div class="appui-notifications-list-notification-notified">
@@ -140,18 +146,7 @@
                 </div>
               </div>
             </div>
-            <div class="bbn-box bbn-bottom-space">
-              <div class="bbn-radius-top bbn-spadded bbn-c bbn-b bbn-bordered-bottom"><?=_('TITLE')?></div>
-              <div class="bbn-spadded"
-                   v-html="selected.title"
-              ></div>
-            </div>
-            <div class="bbn-box bbn-bottom-space">
-              <div class="bbn-radius-top bbn-spadded bbn-c bbn-b bbn-bordered-bottom"><?=_('MESSAGE')?></div>
-              <div class="bbn-spadded"
-                   v-html="selected.content"
-              ></div>
-            </div>
+            
           </div>
         </bbn-scroll>
       </div>

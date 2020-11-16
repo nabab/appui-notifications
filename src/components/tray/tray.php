@@ -43,16 +43,10 @@
     </div>
     <div class="bbn-flex-fill bbn-background">
       <bbn-scroll axis="y">
-        <bbn-list :source="root + 'data/list'"
-                  @select="onSelect"
+        <bbn-list :source="current"
                   :component="$options.components.listItem"
                   :alternate-background="true"
                   ref="list"
-                  :filterable="true"
-                  :filters="{conditions: [{
-                    field: 'read',
-                    'operator': 'isnull'
-                  }]}"
         ></bbn-list>
       </bbn-scroll>
     </div>

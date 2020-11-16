@@ -137,7 +137,7 @@
         "maxlength": 14,
         "decimals": 4
       },
-      "app": {
+      "mobile": {
         "position": 7,
         "type": "decimal",
         "null": 1,
@@ -196,7 +196,7 @@
         "generation": "from_unixtime(`mail`)",
         "default": "NULL"
       },
-      "dt_app": {
+      "dt_mobile": {
         "position": 12,
         "type": "datetime",
         "null": 1,
@@ -204,7 +204,7 @@
         "extra": "VIRTUAL GENERATED",
         "signed": true,
         "virtual": true,
-        "generation": "from_unixtime(`app`)",
+        "generation": "from_unixtime(`mobile`)",
         "default": "NULL"
       },
       "dt_read": {
