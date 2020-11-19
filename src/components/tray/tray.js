@@ -71,6 +71,10 @@
             list.updateData();
           }
         }
+      },
+      _setCoord(){
+        let coord = this.$el.offsetParent.getBoundingClientRect();
+        this.bottomCoord = `${coord.bottom - coord.top}px`;
       }
     },
     created(){
@@ -78,12 +82,25 @@
     },
     mounted(){
       this.$nextTick(() => {
-        let coord = this.$el.offsetParent.getBoundingClientRect();
-        this.bottomCoord = `${coord.bottom - coord.top}px`;
+        this._setCoord();
       })
     },
     beforeDestroy(){
       appui.unregister('appui-appui-notifications-tray');
+    },
+    watch: {
+      /**
+       * @watch isVisible
+       * @fires _setCoord
+       */
+      isVisible: {
+        immediate: true,
+        handler(newVal){
+          if (newVal) {
+            this._setCoord();
+          }
+        }
+      }
     },
     components: {
       listItem: {

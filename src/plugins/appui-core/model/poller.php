@@ -57,7 +57,7 @@ return [[
         'start' => 0
       ]);
       $hash = md5(json_encode($unread['data']));
-      if ($hash !== $data['data']['unreadHash']) {
+      if (isset($data['data']['unreadHash']) && ($hash !== $data['data']['unreadHash'])) {
         $res['data']['unreadHash'] = $hash;
         $res['data']['unread'] = $unread['data'];
         $res['data']['serviceWorkers'] = ['unreadHash' => $hash];
