@@ -127,6 +127,7 @@
                           field="mail"
                           cls="bbn-c"
                           :render="renderMail"
+                          :source="mailSource"
               ></bbns-column>
               <bbns-column title="<?=_('Mobile')?>"
                           field="mobile"
