@@ -3,10 +3,11 @@ $id_user = $model->inc->user->get_id();
 $path_web = \bbn\mvc::get_user_data_path($id_user, 'appui-notifications') . 'web/' . $model->inc->user->get_osession('id_session');
 $path_browser = \bbn\mvc::get_user_data_path($id_user, 'appui-notifications') . 'browser/' . $model->inc->user->get_osession('id_session');
 $notifications = new \bbn\appui\notifications($model->db);
+$ncfg = $notifications->get_class_cfg();
 return [[
   'id' => 'appui-notifications-0',
   'frequency' => 1,
-  'function' => function(array $data) use($path_web, $path_browser, $notifications, $id_user, $model){
+  'function' => function(array $data) use($path_web, $path_browser, $notifications, $id_user, $model, $ncfg){
     $res = [
       'success' => true,
       'data' => []
@@ -49,8 +50,23 @@ return [[
       $unread = $model->get_model($model->plugin_url('appui-notifications').'/data/list', [
         'filters' => [
           'conditions' => [[
-            'field' => "read",
+            'field' => $model->db->col_full_name($ncfg['arch']['notifications']['read'], $ncfg['table']),
             'operator' => "isnull"
+          ], [
+            'logic' => 'OR',
+            'conditions' => [[
+              'field' => $model->db->col_full_name($ncfg['arch']['notifications']['web'], $ncfg['table']),
+              'operator' => "isnotnull"
+            ], [
+              'field' => $model->db->col_full_name($ncfg['arch']['notifications']['browser'], $ncfg['table']),
+              'operator' => "isnotnull"
+            ], [
+              'field' => $model->db->col_full_name($ncfg['arch']['notifications']['mail'], $ncfg['table']),
+              'operator' => "isnotnull"
+            ], [
+              'field' => $model->db->col_full_name($ncfg['arch']['notifications']['mobile'], $ncfg['table']),
+              'operator' => "isnotnull"
+            ]]
           ]]
         ],
         'limit' => 0,
